@@ -15,5 +15,12 @@ class userPageController extends AbstractController
     public function home(){
         return $this->render("user/home.html.twig");
     }
+
+    /**
+     * @Route ("/bienvenue", name="membersHome")
+     */
+    public function membresHome(){
+        return $this->render("members/membersHome.html.twig");
+    }
 }
 

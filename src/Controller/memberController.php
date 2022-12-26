@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\membersType;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use PhpParser\Node\Stmt\DeclareDeclare;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -64,13 +65,13 @@ class memberController extends AbstractController
             $user->setPassword($hashedPassword);
             $user->setEmail($form->get('email')->getData());
             $user->setFirstname($form->get('firstname')->getData());
-            $user->setFirstname($form->get('name')->getData());
+            $user->setname($form->get('name')->getData());
 
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
 
-            return $this->redirect('members/register.html.twig');
+            return $this->redirect('bienvenue');
         }
 
         return $this->render('members/register.html.twig', [
