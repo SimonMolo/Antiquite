@@ -1,2 +1,7 @@
-{% extends 'user/home.html.twig' %}
+{% extends 'user/base.html.twig' %}
+{% block main%}
+    {{ form_start(loginForm) }}
+            {{ form_row(login_Form.email) }}
+            {{ form_row(login_Form.password) }}
+{% endblock main  %}
 
